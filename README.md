@@ -8,32 +8,29 @@ is a Tool for syncing all filesystems on  a portable memory device.
 
 
 ## File System
-* Memory device
+* TempStorage
     * Fync.jar
     * Fync.sync
-    * FyncData
-* Main storage
+    * Mirror
+    * Data
+* SolidStorage (including root storage)
     * FILES
-        * Fync.cfg
-* Storage 1 (2, 3, ...)
-    * FILES
-        * Fync.cfg
+    * Fync.cfg
 
-### Fync.jar
+### TempStorage -> Fync.jar
 is the executable for controlling all the files
 
-### Fync.cfg
-first of all declares the folder as fync storage space and contains all the information related to the storage space.
-
-### Fync.sync
+### TempStorage -> Fync.sync
 contains the information related to the portable memory device / the executable.
 
-### FyncData
+### SolidStorage -> Mirror
+stores the files of the root storage as hashes
+
+### TempStorage -> Data
 is a folder which should contain all the files that should be synced.
 
-
-## Main Storage
+### SolidStorage -> FILES
 is the anchor for all syncronisation. In the best case all storage spaces should look like the main storage.
 
-## Portable Memory
-stores the raw construct of the main storage plus the hashes of all files
+### SolidStorage -> Fync.cfg
+first of all declares the folder as fync storage space and contains all the information related to the storage space including weather the storage system is the root storage.
